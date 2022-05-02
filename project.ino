@@ -8,11 +8,10 @@ void setup() {
 void loop() {
   long start = millis();
   long total = cs.capacitiveSensor(30);
-  Serial.print(millis() - start);
   Serial.print("\t");
-  if(total < 1000){
+  if(millis() - start < 1){
       Serial.println("Aaah, that feels good.");
-  } else if (total < 10000){
+  } else if (millis() - start < 2){
       Serial.println("Oh? Do you need something from me?");
   } else {
       Serial.println("Too hard, man!");
